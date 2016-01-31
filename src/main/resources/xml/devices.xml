@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<devices xmlns="http://devices.com/Device" xmlns:types="http://types.com/Device" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://devices.com/Device devices.xsd">
+
+    <device id="d001">
+        <name>Nvidia GeForce GTX 970</name>
+        <origin>USA</origin>
+        <price>12000</price>
+        <type>
+            <isPeripheral>true</isPeripheral>
+            <consumption>600</consumption>
+            <cooler>true</cooler>
+            <deviceGroup>IO</deviceGroup>
+            <ports>
+                <types:COM>true</types:COM>
+                <types:LPT>true</types:LPT>
+                <types:USB>false</types:USB>
+            </ports>
+        </type>
+        <critical>true</critical>
+    </device>
+
+    <device id="d002">
+        <name>Intel Core i7</name>
+        <origin>USA</origin>
+        <price>11500</price>
+        <type>
+            <isPeripheral>false</isPeripheral>
+            <consumption>91</consumption>
+            <cooler>true</cooler>
+            <deviceGroup>multimedia</deviceGroup>
+            <ports>
+                <types:COM>false</types:COM>
+                <types:LPT>false</types:LPT>
+                <types:USB>false</types:USB>
+            </ports>
+        </type>
+        <critical>true</critical>
+    </device>
+
+</devices>

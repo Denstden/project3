@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           targetNamespace="http://devices.com/Device"
+           xmlns:types="http://types.com/Device"
+           xmlns="http://devices.com/Device">
+    <xs:import schemaLocation="types.xsd" namespace="http://types.com/Device"/>
+    <xs:element name="devices" type="typeDevices"/>
+    <xs:complexType name="typeDevices">
+        <xs:sequence>
+            <xs:element name="device" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="name" type="xs:string"/>
+                        <xs:element name="origin" type="originType"/>
+                        <xs:element name="price" type="xs:nonNegativeInteger"/>
+                        <xs:element name="type" type="tType"/>
+                        <xs:element name="critical" type="xs:boolean"/>
+                    </xs:sequence>
+                    <xs:attribute name="id" type="xs:ID" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="originType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Ukraine"/>
+            <xs:enumeration value="China"/>
+            <xs:enumeration value="USA"/>
+            <xs:enumeration value="Germany"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="tType">
+        <xs:sequence>
+            <xs:element name="isPeripheral" type="xs:boolean"/>
+            <xs:element name="consumption" type="xs:nonNegativeInteger"/>
+            <xs:element name="cooler" type="xs:boolean"/>
+            <xs:element name="deviceGroup" type="typeDeviceGroup"/>
+            <xs:element name="ports" type="types:typePorts"/>
+        </xs:sequence>
+
+    </xs:complexType>
+
+    <xs:simpleType name="typeDeviceGroup">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="IO"/>
+            <xs:enumeration value="multimedia"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           targetNamespace="http://types.com/Device">
+
+    <xs:complexType name="typePorts">
+        <xs:all>
+            <xs:element name="COM" type="xs:boolean"/>
+            <xs:element name="USB" type="xs:boolean"/>
+            <xs:element name="LPT" type="xs:boolean"/>
+        </xs:all>
+
+    </xs:complexType>
+
+</xs:schema>
